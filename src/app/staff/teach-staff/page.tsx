@@ -3,14 +3,9 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import styles from "./teachingstaff.module.css";
 import staffData from "@/lib/lecturersData";
-import { HomepageSlider } from "@/src/components";
-import LabStaff from "../../../../public/images/staffLab.jpg";
-import GroupStaff from "../../../../public/images/chemistry_lab/group-staff.jpg";
 
 export default function TeachingStaffPage() {
   const router = useRouter();
-
-  const staffImgArray = [GroupStaff, LabStaff];
 
   const handleStaffClick = (fullName: string) => {
     router.push(
@@ -20,12 +15,11 @@ export default function TeachingStaffPage() {
 
   return (
     <main className="h-full">
-      <HomepageSlider title="Teaching Staff" bgImage={staffImgArray} />
-      {/* <section className={styles.hero__section}>
+      <section className={styles.hero__section}>
         <div className="w-5/6 text-center h-1/2 flex items-center justify-center">
           <h1 className="text-5xl font-bold text-white">Teaching Staff</h1>
         </div>
-      </section> */}
+      </section>
       <section className="bg-slate-100 pb-16">
         <div className="text-center text-primary text-xl h-[80px] grid place-items-center">
           <p>

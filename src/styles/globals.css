@@ -29,7 +29,3 @@
     @apply bg-primary hover:bg-blue-700 rounded-xl w-[3px];
   }
 }
-
-img {
-  background: url("../../public/loading.gif") 50% 0 no-repeat;
-}

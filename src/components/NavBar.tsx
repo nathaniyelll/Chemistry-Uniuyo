@@ -1,5 +1,6 @@
 "use client";
 
+// import React from 'react';
 import { VscMenu, VscClose } from "react-icons/vsc";
 import { IoLibrary } from "react-icons/io5";
 import { GiArchiveResearch } from "react-icons/gi";
@@ -9,19 +10,30 @@ import { PiGraduationCapFill, PiInfoFill } from "react-icons/pi";
 import Image from "next/image";
 import Link from "next/link";
 
-import Logo from "../../public/images/logo.jpg";
+import logo from "../../public/images/logo.jpg";
 
 import { useGlobalContext } from "@/context";
 import HoverButton from "./NavBar/HoverButton";
 import { programmesArray, staffArray } from "@/lib";
 import NavLink from "./NavBar/NavLink";
+import { BsHouseFill } from "react-icons/bs";
 
 export default function NavBar() {
-  const { isMenuClicked, setIsMenuClicked } = useGlobalContext();
+  const { isMenuClicked, isScrolled, setIsMenuClicked } = useGlobalContext();
 
   const toggleMenu = () => {
     setIsMenuClicked((prev) => !prev);
   };
+
+  // const scrolling = () => window.scrollY > 70 ? setIsScrolled(true) : setIsScrolled(false);
+
+  // React.useEffect(() => {
+  // 	window.onscroll = scrolling;
+
+  // 	return () => {
+  // 		window.removeEventListener('scroll', scrolling);
+  // 	};
+  // }, [])
 
   return (
     <nav
@@ -34,7 +46,7 @@ export default function NavBar() {
           <div className="flex flex-shrink-0 gap-2 sm:gap-3 items-center md:gap-1 lg:gap-4">
             <Link onClick={() => setIsMenuClicked(false)} href="/" title="home">
               <Image
-                src={Logo}
+                src={logo}
                 alt="logo"
                 className="h-12 w-12 sm:h-14 sm:w-14 rounded-full"
                 priority

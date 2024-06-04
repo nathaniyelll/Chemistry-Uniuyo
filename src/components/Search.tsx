@@ -12,11 +12,7 @@ type SearchProps = {
   isGlobal?: boolean;
 };
 
-export default function Search({
-  placeholder,
-  isGlobal = false,
-  className,
-}: SearchProps) {
+export default function Search({ placeholder, className }: SearchProps) {
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const { replace } = useRouter();

@@ -4,7 +4,6 @@ import Link from "next/link";
 import React from "react";
 import { motion } from "framer-motion";
 import { RiArrowRightSLine } from "react-icons/ri";
-import { Button } from "@/src/components";
 
 type sliderProps = {
   bgImage?: any;
@@ -22,19 +21,13 @@ const HomepageSlider = ({
   btnLink,
 }: sliderProps) => {
   return (
-    <div className={`relative border-4 size-full`}>
-      {Array.isArray(bgImage) ? (
-        bgImage.map((image, index) => (
-          <Image
-            key={index}
-            src={image}
-            alt={title}
-            className="size-full md:h-[32rem]"
-          />
-        ))
-      ) : (
-        <Image src={bgImage} alt={title} className="size-full md:h-[32rem]" />
-      )}
+    <div className={`relative aspect-h-5 aspect-w-3 md:aspect-h-2`}>
+      <Image
+        src={bgImage}
+        alt={title}
+        className="object-cover"
+        style={{ height: "85%" }}
+      />
 
       {title && (
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white p-4 h-fit bg-black opacity-65 mx-auto w-[95%] md:w-3/4 flex flex-col justify-center gap-4">
@@ -77,9 +70,13 @@ const HomepageSlider = ({
                 duration: 0.8,
               }}
             >
-              <Button arrow className="">
-                <Link href={btnLink}>Read more</Link>
-              </Button>
+              <Link
+                href={btnLink}
+                className="flex justify-center items-center text-black bg-white hover:underline transition ease-in-out duration-150 text-lg text-center gap-1 py-2 w-1/2 md:w-1/4 rounded-lg shadow-md hover:scale-90"
+              >
+                Read more
+                <RiArrowRightSLine className="text-2xl text-primary text-center mt-1" />
+              </Link>
             </motion.div>
           )}
         </div>

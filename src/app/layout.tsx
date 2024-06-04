@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Footer, NavBar } from "@/components";
 import { Providers, lusitana } from "@/context";
 
 import "../styles/globals.css";
+import { Footer, NavBar } from "@/components";
 
 export const metadata: Metadata = {
   title: {
