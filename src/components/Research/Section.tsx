@@ -50,12 +50,8 @@ export default function Section({
       className="flex flex-col items-center gap-5 p-4 container overflow-hidden border-spacing-36 border-b border-blue-50"
     >
       {isMainPage && (
-        <div className="w-full flex flex-col gap-3 md:gap-5 border-b border-blue-50 p-2 my-4">
-          <h1 className="text-4xl text-blue-950 capitalize font-bold">
-            {type + "s"}
-          </h1>
-
-          <div className="w-full flex flex-col-reverse md:flex-row justify-between gap-4 my-4">
+        <div className="w-full flex flex-col gap-3 lg:gap-5 border-b border-blue-50 p-2 my-4">
+          <div className="w-full flex flex-col-reverse lg:flex-row justify-between gap-4 my-4">
             {filterButtonArray && <FilterButton array={filterButtonArray} />}
 
             <Search placeholder="search" />
@@ -68,7 +64,7 @@ export default function Section({
           <p className="text-sm text-center mb-3">
             showing {filterArray.length} search{" "}
             {filterArray.length < 2 ? "result" : "results"} out of{" "}
-            {cardsArray.length} {type}s
+            {cardsArray.length} research work
           </p>
         ) : null}
 
@@ -77,13 +73,13 @@ export default function Section({
         </aside>
       </aside>
 
-      {isPaginated && (
+      {isPaginated && filterArray.length > 0 ? (
         <Pagination
           totalPosts={filterArray.length}
           postPerPage={postsPerPage}
           currentPage={currentPage}
         />
-      )}
+      ) : null}
     </section>
   );
 }

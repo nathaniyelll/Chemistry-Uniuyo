@@ -8,7 +8,7 @@ import { motion as m } from "framer-motion";
 import Link from "next/link";
 
 export const Main = ({ children }: { children?: React.ReactNode }) => (
-  <main className="flex min-h-[80vh] flex-col items-center gap-5 w-full">
+  <main className="flex min-h-[80vh] flex-col items-center gap-5 w-full mt-20 lg:mt-24">
     {children}
   </main>
 );
@@ -71,13 +71,12 @@ export const Button = ({
   );
 };
 
-
 interface RouteLinkBtnProps {
   children?: React.ReactNode;
   variant?: "primary" | "secondary" | "transparent";
   className?: string;
   arrow?: boolean;
-href: string
+  href: string;
 }
 export const RouteLinkBtn = ({
   children,
@@ -88,8 +87,11 @@ export const RouteLinkBtn = ({
 }: RouteLinkBtnProps) => {
   return (
     <Link
-    href={href}
-        className={clsx(`px-6 py-2 flex group justify-center items-center min-w-10 min-h-8 transition-all ease-in-out duration-200 text-center text-lg md:text-base bg-${variant} border hover:shadow`, className)}
+      href={href}
+      className={clsx(
+        `px-6 py-2 flex group justify-center items-center min-w-10 min-h-8 transition-all ease-in-out duration-200 text-center text-lg md:text-base bg-${variant} border hover:shadow`,
+        className
+      )}
     >
       {children}{" "}
       {arrow && (

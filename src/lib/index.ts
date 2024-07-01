@@ -1,5 +1,5 @@
 export { allResources } from "./resources";
-export {RecentNews} from "./RecentNews"
+export { RecentNews } from "./RecentNews";
 export {
   default as homeData,
   homeStaffData,
@@ -21,6 +21,6 @@ export {
 } from "./footerData";
 export { programmesArray, staffArray } from "./hoverButtonData";
 
-export { journalInfo, articleInfo, publications } from "./research";
+export { publications } from "./research";
 
 export { animateDiv as d } from "./framerAnimation";

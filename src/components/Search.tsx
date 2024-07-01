@@ -36,7 +36,7 @@ export default function Search({ placeholder, className }: SearchProps) {
   };
 
   return (
-    <div className={`relative w-full max-w-[450px] ${className}`}>
+    <div className={`relative w-full h-fit max-w-[450px ${className}`}>
       <label htmlFor="search" className="sr-only">
         Search
       </label>
